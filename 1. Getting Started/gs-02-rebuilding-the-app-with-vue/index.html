@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A First App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for="goal">Goal</label>
+        <!-- Enlazo el valor del input con la propiedad enteredValue mediante v-model -->
+        <input type="text" id="goal" v-model="enteredValue" />
+        <!-- Añado un event listener al botón para escuchar el evento 'click' y ejecutar la función addGoal cuando se haga click en el botón -->
+        <button v-on:click="addGoal">Add Goal</button>
+      </div>
+      <ul>
+        <!-- Recorro la lista de objetivos y muestro cada uno en un elemento li, la doble llave {{}} es para interpolar el valor y que así se muestre en el HTML -->
+        <li v-for="goal in goals">{{ goal }}</li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
